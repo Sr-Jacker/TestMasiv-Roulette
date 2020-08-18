@@ -1,0 +1,17 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #rouleteForm="ngForm">
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" [(ngModel)]="roulette.state" 
+            class="form-control" 
+            id="state" 
+            name="state" 
+            placeholder="Enter the Roulette state"
+            required #name="ngModel">
+        </div>
+        <div [hidden]="!name.pristine" class="alert alert-danger">State is required</div>
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

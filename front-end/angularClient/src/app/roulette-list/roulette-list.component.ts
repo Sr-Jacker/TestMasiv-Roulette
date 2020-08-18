@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Roulette } from '../classes/roulette';
+import { RouletteService } from '../classes/roulette.service';
 
 @Component({
   selector: 'app-roulette-list',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./roulette-list.component.css']
 })
 export class RouletteListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  roulettes:Roulette[];
+   constructor(private rouletteService: RouletteService) {
   }
-
+  ngOnInit() {
+    this.rouletteService.findAll().subscribe(data => {
+      this.roulettes = data;
+    });
+  }
 }
