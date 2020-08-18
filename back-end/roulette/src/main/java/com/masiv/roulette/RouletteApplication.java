@@ -1,4 +1,4 @@
-package com.javier.roulette;
+package com.masiv.roulette;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
